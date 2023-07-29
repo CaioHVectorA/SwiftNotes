@@ -4,12 +4,12 @@ http://ionicframework.com/docs/theming/ */
 /** Ionic CSS Variables **/
 :root {
   /** primary **/
-  --ion-color-primary: #eb445a;
+  --ion-color-primary: #A792F9;
   --ion-color-primary-rgb: 235, 68, 90;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #cf3c4f;
-  --ion-color-primary-tint: #ed576b;
+  --ion-color-primary-shade: #7d6bc4;
+  --ion-color-primary-tint: #baabf3;
 
   /** secondary **/
   --ion-color-secondary: #3dc2ff;
@@ -83,12 +83,12 @@ http://ionicframework.com/docs/theming/ */
    */
 
   body {
-    --ion-color-primary: #ff4961;
+    --ion-color-primary: #3d3044;
     --ion-color-primary-rgb: 255, 73, 97;
     --ion-color-primary-contrast: #000000;
     --ion-color-primary-contrast-rgb: 0, 0, 0;
-    --ion-color-primary-shade: #e04055;
-    --ion-color-primary-tint: #ff5b71;
+    --ion-color-primary-shade: #251d29;
+    --ion-color-primary-tint: #605368;
 
     --ion-color-secondary: #50c8ff;
     --ion-color-secondary-rgb: 80,200,255;
@@ -197,11 +197,11 @@ http://ionicframework.com/docs/theming/ */
    */
 
   .md body {
-    --ion-background-color: #121212;
-    --ion-background-color-rgb: 18,18,18;
+    --ion-background-color: #231717;
+    --ion-background-color-rgb: 35, 23, 23;
 
-    --ion-text-color: #ffffff;
-    --ion-text-color-rgb: 255,255,255;
+    --ion-text-color: #FCF7F7;
+    --ion-text-color-rgb: 252, 247, 247;
 
     --ion-border-color: #222222;
 
@@ -227,7 +227,7 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-item-background: #1e1e1e;
 
-    --ion-toolbar-background: #1f1f1f;
+    --ion-toolbar-background: rgba(0,0,0,0);
 
     --ion-tab-bar-background: #1f1f1f;
 

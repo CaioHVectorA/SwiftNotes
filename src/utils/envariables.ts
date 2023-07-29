@@ -1,0 +1,1 @@
+export const DATA_LOCAL_STORAGE = "_WRITER_CARDS_DATA_"
