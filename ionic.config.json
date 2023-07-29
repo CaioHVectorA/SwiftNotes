@@ -1,0 +1,7 @@
+{
+  "name": "UVC Writer",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
