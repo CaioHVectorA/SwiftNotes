@@ -5,13 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npx ionic build && npx ionic cap add android",
     "preview": "vite preview",
     "test.e2e": "cypress run",
     "test.unit": "vitest",
     "lint": "eslint"
   },
   "dependencies": {
+    "@capacitor/android": "5.2.2",
     "@capacitor/app": "5.0.6",
     "@capacitor/core": "5.2.2",
     "@capacitor/haptics": "5.0.6",

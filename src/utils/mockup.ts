@@ -36,6 +36,6 @@ export const mockup: Note[] = [
     new NoteConstr('Minha Nota', "bla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla bla", new Date(), new Date()),
     new NoteConstr('Minha Nota', "bla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla bla", new Date(), new Date()),
     new NoteConstr('Minha Nota', "bla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla bla", new Date(), new Date()),
-    new NoteConstr('Minha Nota', "bla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla bla", new Date(), new Date()),
+    new NoteConstr('M   inha Nota', "bla bla blabla bla blabla bla blabla bla blabla bla blabla bla blabla bla bla", new Date(), new Date()),
 ]
 
