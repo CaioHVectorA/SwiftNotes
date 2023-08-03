@@ -34,7 +34,7 @@ function NoteView({ data }: { data: Note_T }) {
                 // console.log(getDataStorage()[getIndex()].body[index].value)
                 const Item = getFunc(item.identifier)
              return (
-                <Item key={index} value={getDataStorage()[getIndex()].body[index].value || ""} index={index} />
+                <Item key={index} value={appData[getIndex()].body[index].value || ""} index={index} />
             )
             })}
             <AddComponents state={body} setState={setBody}/>
