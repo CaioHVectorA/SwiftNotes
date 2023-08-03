@@ -45,7 +45,9 @@ function SelectorsToolbar() {
             </Title>
         </IonTitle>
         <IonButtons slot="end" style={{paddingRight: '2%'}}>
-        <IonButton onClick={() => DeleteNotes(appData,selectorMode,setSelectorMode,setAppData)}>
+        <IonButton onClick={() => {
+            setAppData(DeleteNotes(appData,selectorMode,setSelectorMode))
+            }}>
         <IonLabel color={"danger"}>Delete</IonLabel>
         </IonButton>
         <IonButton onClick={() => setSelectorMode([])}>

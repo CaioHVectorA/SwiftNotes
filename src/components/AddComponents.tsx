@@ -1,3 +1,4 @@
+//@ts-nocheck
 import {
   IonFab,
   IonFabButton,
@@ -7,39 +8,49 @@ import {
 } from "@ionic/react";
 import { add, text, list } from "ionicons/icons";
 import { ColumnContainer } from "./styled/Containers";
+import { Note, TextComponents } from "../utils/type";
+import { BlockText, Title, List } from "./TextComponents";
+import { SetStateAction, useContext, useState } from "react";
+import { AppContext } from "../utils/AppContext";
+import { DATA_LOCAL_STORAGE, INDEX_LOCAL_STORAGE } from "../utils/envariables";
+import getIndex from "../utils/getIndexByStorage";
 type ButtonProps = {
   icon: string;
-  action: React.ReactNode;
+  component: TextComponents;
   label: string;
+  identifier: string;
 };
-
-const MenuButton = ({ action, icon, label }: ButtonProps) => {
-  const state: any[] = [];
-  return (
-    <IonFabButton
-      onClick={() =>
-        console.log("Lógica p/ adicionar componetnes na array aqui")
+  const ButtonsData: ButtonProps[] = [
+    { icon: text, component: {component: Title, value: "", identifier: 'Title'}, label: "Título",},
+    { icon: list, component: {component: List,value: [], identifier: 'List'}, label: "Lista",},
+    { icon: text, component: {component: BlockText, value: "", identifier: 'TextBlock'}, label: "Parágrafo",},
+  ];
+  export default function AddComponents({ state, setState }: { state: TextComponents[], setState: SetStateAction<TextComponents[]> }) {
+    const { setAppData } = useContext(AppContext)
+    const MenuButton = ({ component, icon, label }: ButtonProps) => {
+      function HandleClick() {
+          const data: Note[] = JSON.parse(localStorage.getItem(DATA_LOCAL_STORAGE))
+          setState([...state, component])
+          data[getIndex()].body = [...state, component]
+          data[getIndex()].modified = new Date()
+          setAppData(data)
+          localStorage.setItem(DATA_LOCAL_STORAGE,JSON.stringify(data))
       }
-      style={{
-        "--border-width": "0.25px",
-        "--border-style": "solid",
-        "--border-color": "rgba(255,255,255,.6)",
-        "--color": "black",
-        width: "100%",
-      }}
-    >
-      <IonIcon style={{ color: "white" }} icon={icon}></IonIcon>
-    </IonFabButton>
-  );
-};
-const blankFunc = () => {};
-const ButtonsData: ButtonProps[] = [
-  { icon: text, action: blankFunc, label: "Título" },
-  { icon: list, action: blankFunc, label: "Lista" },
-  { icon: text, action: blankFunc, label: "Parágrafo" },
-];
-
-export default function AddComponents() {
+      return (
+        <IonFabButton
+          onClick={HandleClick}
+          style={{
+            "--border-width": "0.25px",
+            "--border-style": "solid",
+            "--border-color": "rgba(255,255,255,.6)",
+            "--color": "black",
+            width: "100%",
+          }}
+        >
+          <IonIcon style={{ color: "white" }} icon={icon}></IonIcon>
+        </IonFabButton>
+      );
+    };
   return (
     <IonFab
       style={{
@@ -74,7 +85,7 @@ export default function AddComponents() {
           >
             <MenuButton
               label={item.label}
-              action={item.action}
+              component={item.component}
               key={index}
               icon={item.icon}
             />
